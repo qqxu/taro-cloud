@@ -14,3 +14,13 @@ pn dev:weapp
 - 选择微信云开发
 
 
+3、云函数本地调试
+```
+cd cloud/functions/login
+# 如果能正常退出，说明本地函数无问题
+pnpm run local 
+```
+
+4、上传云函数
+- 开发者工具，functions目录，右击，选择同步云函数列表
+- login 目录，右击，选择上传并部署

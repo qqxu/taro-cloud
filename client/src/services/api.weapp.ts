@@ -16,17 +16,18 @@ export const loadCommunicateContent = ({ text }) => {
         })
         .then(res => {
           console.log('2 本地发起云函数成功', res);
-          resolve(JSON.parse((res.result) as string))
           Taro.hideLoading();
+          resolve(JSON.parse((res.result) as string))
 
         }).catch(err => {
 
           console.log('2 本地发起云函数失败',typeof err, err);
-          reject({
+          Taro.hideLoading();
+
+          resolve({
             code: 1,
             msg: '啊哦，连接失败，稍后再试呢'
           })
-          Taro.hideLoading();
 
 
         })
